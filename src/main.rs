@@ -5,6 +5,8 @@ use serde::{Serialize, Deserialize};
 use serde_json::Result;
 use serde_json::value;
 
+mod conf;
+
 pub const MLOGIN: &str =  "user.login";
 pub const EVGET: &str = "event.get";
 
