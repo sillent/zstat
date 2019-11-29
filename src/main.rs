@@ -52,10 +52,6 @@ struct Login<T> {
 
 }
 fn main() {
-    // let mut heads = reqwest::header::HeaderMap::new();
-    // heads.insert(hea::CONTENT_TYPE,hea::HeaderValue::from_static("application/json-rpc"));
-
-    // let k = reqwest::ClientBuilder::new();
     let js = Login {
         jsonrpc: String::from("2.0"),
         method: String::from("user.login"),
