@@ -10,16 +10,12 @@ pub const EVGET: &str = "event.get";
 
 enum ZBXM {
     MLOGIN,
-
 }
+
 #[derive(Deserialize, Serialize,Debug)]
 struct Auth {
     user: String,
     password: String,
-}
-
-struct Event {
-
 }
 
 #[derive(Deserialize,Serialize, Debug)]
@@ -63,9 +59,9 @@ fn main() {
         }
     };
     println!("Json: {:?}", js);
-    let apiUrl: String = format!("https://{}/api_jsonrpc.php", env::var("ZURL").unwrap()).to_string();
+    let api_url: String = format!("https://{}/api_jsonrpc.php", env::var("ZURL").unwrap()).to_string();
     let cl = reqwest::Client::new();
-    let resp = cl.post(apiUrl.as_str())
+    let resp = cl.post(api_url.as_str())
                  .header("Content-Type", "application/json-rpc")
                  .json(&js)
                  .send().unwrap().text().unwrap();
